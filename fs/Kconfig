@@ -312,7 +312,6 @@ source "fs/nls/Kconfig"
 source "fs/dlm/Kconfig"
 
 endmenu
-
 config BLOCK_UNWANTED_FILES
 	bool "Allow blocking files from executing from kernel"
 	help
