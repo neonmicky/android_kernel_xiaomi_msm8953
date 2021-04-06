@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Cloning dependencies"
-git clone --depth=1 -b eleven-reb https://github.com/MASTERGUY/android_kernel_xiaomi_msm8953 kernel
+git clone --depth=1 -b 11-reb https://github.com/neonmicky/android_kernel_xiaomi_msm8953 kernel
 cd kernel
 git clone --depth=1 -b master https://github.com/kdrag0n/proton-clang clang
 git clone https://github.com/MASTERGUY/AnyKernel3 -b tissot --depth=1 AnyKernel
@@ -14,7 +14,7 @@ BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 export PATH="$(pwd)/clang/bin:$PATH"
 export KBUILD_COMPILER_STRING="$($kernel/clang/bin/clang --version | head -n 1 | perl -pe 's/\((?:http|git).*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//' -e 's/^.*clang/clang/')"
 export ARCH=arm64
-export KBUILD_BUILD_USER=mtpiplod
+export KBUILD_BUILD_USER=neonmicky
 export KBUILD_BUILD_HOST=circleci
 # Compile plox
 function compile() {
